@@ -16,15 +16,15 @@ class BonusServiceTest {
 		BonusService service = new BonusService();
 		
 		//primeira opção para trabalhar com exceptions
-		//assertThrows(IllegalArgumentException.class, () -> service.calcularBonus(new Funcionario("Sergio", LocalDate.now(), new BigDecimal(25000))));
+		assertThrows(IllegalArgumentException.class, () -> service.calcularBonus(new Funcionario("Sergio", LocalDate.now(), new BigDecimal(25000))));
 		
 		//outra maneira de testar exceptions
-		try {
-			service.calcularBonus(new Funcionario("Sergio", LocalDate.now(), new BigDecimal(25000)));
-			fail("Não deu a exception!");
-		} catch (Exception e) {
-			assertEquals("Funcionário com salário maior do que R$ 1000,00 não pode receber bônus!", e.getMessage());
-		}
+		/*
+		 * try { service.calcularBonus(new Funcionario("Sergio", LocalDate.now(), new
+		 * BigDecimal(25000))); fail("Não deu a exception!"); } catch (Exception e) {
+		 * assertEquals("Funcionário com salário maior do que R$ 1000,00 não pode receber bônus!"
+		 * , e.getMessage()); }
+		 */
 		
 	}
 	
